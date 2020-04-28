@@ -15,6 +15,17 @@
         Votre but ? Récolter le plus de clochettes possible pour devenir le.a plus riche de tous !</span>
     </header>
     <main>
+        <section id="click">
+        <div id="clochette">
+            <img id="bag" src="src/img/bag.png"/>
+        </div>
+        </section>
+        <section id="obtenu">
+
+        </section>
+        <section id="store">
+
+        </section>
     </main>
 
 </body>

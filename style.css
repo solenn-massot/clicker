@@ -14,3 +14,36 @@ header{
     margin-right: auto;
     margin-left: auto;
 }
+main{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+#click{
+    grid-area: 1 / 1 / 6 / 3;
+}
+#bag{
+    display: block;
+    margin-top: 15%;
+    margin-left: auto;
+    margin-right : auto;
+    width: 70%;
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+#bag:hover{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    cursor: pointer;
+}
+#obtenu{
+    grid-area: 1 / 3 / 6 / 5;
+}
+#store{
+    grid-area: 1 / 5 / 6 / 7;
+}
