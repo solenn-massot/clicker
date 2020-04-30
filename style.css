@@ -1,8 +1,13 @@
+
 body{
     background-image: url(src/img/wallpaper.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     margin : 0;
     padding: 0;
     font-family : 'manrope';
+    height: 100vh;
 }
 header{
     text-align: center;
@@ -15,15 +20,18 @@ header{
     margin-left: auto;
 }
 main{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    flex-grow: 1;
 }
 
 #click{
-    grid-area: 1 / 1 / 6 / 3;
+    background-color: rgba(255, 255, 255, 0.75);
+    overflow: hidden;
+    height: 80vh;
+    flex: 1 1 auto;
 }
 #bag{
     display: block;
@@ -33,17 +41,90 @@ main{
     width: 70%;
     -webkit-transform: scale(1);
 	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+	-webkit-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
 }
 #bag:hover{
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
     cursor: pointer;
 }
-#obtenu{
-    grid-area: 1 / 3 / 6 / 5;
+#bag:active{
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    cursor: pointer;
 }
+#store div{
+    background-color: rgb(119, 55, 55, 0.75);
+    border-style: solid;
+    border-color: white;
+    height: 10%;
+}
+
 #store{
-    grid-area: 1 / 5 / 6 / 7;
+    flex: 1 1 auto;
+}
+#meli{
+    grid-area: 1 / 1 / 2 / 2;
+}
+#craft{
+    grid-area: 1 / 2 / 2 / 3;
+}
+#melo{
+    grid-area: 2 / 1 / 3 / 2;
+}
+#item{
+    grid-area: 2 / 2 / 3 / 3;
+}
+#thibou{
+    grid-area: 3 / 1 / 4 / 2;
+}
+#pelle{
+    grid-area: 3 / 2 / 4 / 3;
+}
+#pollux{
+    grid-area: 4 / 1 / 5 / 2;
+}
+#canne{
+    grid-area: 4 / 2 / 5 / 3;
+}
+#djason{
+    grid-area: 5 / 1 / 6 / 2;
+}
+#filet{
+    grid-area: 5 / 2 / 6 / 3;
+}
+#daisy{
+    grid-area: 6 / 1 / 7 / 2; 
+}
+#navet{
+    grid-area: 6 / 2 / 7 / 3;
+}
+#obtenu{
+    display: grid;
+    grid-template-columns: 0.7fr 0.3fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width : 30%;
+    height: 70%;
+}
+#obtenu div{
+    overflow: hidden;
+    background-color: rgba(85, 165, 211, 0.75);
+    border-style: solid;
+    border-color: white;
+
+}
+#obtenu img{
+    max-height: 100%;
+}
+.item_obtenu img{
+    display:block;
+    margin-right: auto;
+    margin-left: auto;
+    filter: drop-shadow(5px 5px 5px #222);
+}
+#store img{
+    max-height: 100%;
 }

@@ -9,23 +9,102 @@
     <link rel='stylesheet' href='style.css'>
     <title>Accueil</title>
 </head>
+
 <body>
     <header>
-        <span><h1>Bienvenue sur Animal clicker</h1>
-        Votre but ? Récolter le plus de clochettes possible pour devenir le.a plus riche de tous !</span>
+        <span>
+            <h1>Bienvenue sur Animal clicker</h1>
+            Votre but ? Récolter le plus de clochettes possible pour devenir le.a plus riche de tous !
+        </span>
     </header>
     <main>
         <section id="click">
-        <div id="clochette">
-            <img id="bag" src="src/img/bag.png"/>
-        </div>
-        </section>
-        <section id="obtenu">
+        <div id="score">
 
+</div>
+            <div id="clochette">
+                <img id="bag" src="src/img/bag.png" />
+            </div>
         </section>
+    <section id="obtenu">
+        
+            <div id="meli">
+                
+                <img src="src/img/méli.png"/>
+                <img src="src/img/méli.png"/>
+            </div>
+            <div class="item_obtenu" id="craft">
+               <img src="src/img/craft.png"/>
+            </div>
+        
+        
+            <div id="melo">
+               <img src="src/img/mélo.png"/>
+            </div>
+            <div class="item_obtenu" id="item">
+                <img src="src/img/objet.png"/>
+            </div>
+        
+        
+            <div id="thibou">
+                <img src="src/img/thibou.png"/>
+            </div>
+            <div class="item_obtenu" id="pelle">
+                <img src="src/img/pelle_rudimentaire.png"/>
+            </div>
+        
+        
+            <div id="pollux">
+                <img src="src/img/pollux.png"/>
+            </div>
+            <div class="item_obtenu" id="canne">
+                <img src="src/img/canne_rudimentaire.png"/>
+            </div>
+        
+        
+            <div id="djason">
+                <img src="src/img/djason.png"/>
+            </div>
+            <div class="item_obtenu" id="filet">
+                <img src="src/img/filet_rudimentaire.png"/>
+            </div>
+        
+        
+            <div id="daisy">
+                <img src="src/img/daisy_mae.png"/>
+            </div>
+            <div class="item_obtenu" id="navet">
+                <img src="src/img/navet.png"/>
+            </div>
+        
+    </section>
         <section id="store">
+            <div id="outils">
+            <img src="src/img/canne_rudimentaire.png"/>
+            <img src="src/img/canne_rudimentaire.png"/>
+            <img src="src/img/canne_rudimentaire.png"/>
+            </div>
+            <div id="b_meli">
 
+            </div>
+            <div id="b_melo">
+
+            </div>
+            <div id="b_thibou">
+
+            </div>
+            <div id="b_pollux">
+
+            </div>
+            <div id="b_djason">
+
+            </div>
+            <div id="b_daisy">
+
+            </div>
         </section>
     </main>
 
 </body>
+
+</html>
