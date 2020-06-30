@@ -30,8 +30,6 @@
         
             <div id="meli">
                 
-                <img src="src/img/méli.png"/>
-                <img src="src/img/méli.png"/>
             </div>
             <div class="item_obtenu" id="craft">
                <img src="src/img/craft.png"/>
@@ -39,7 +37,7 @@
         
         
             <div id="melo">
-               <img src="src/img/mélo.png"/>
+               
             </div>
             <div class="item_obtenu" id="item">
                 <img src="src/img/objet.png"/>
@@ -47,7 +45,7 @@
         
         
             <div id="thibou">
-                <img src="src/img/thibou.png"/>
+                
             </div>
             <div class="item_obtenu" id="pelle">
                 <img src="src/img/pelle_rudimentaire.png"/>
@@ -55,7 +53,7 @@
         
         
             <div id="pollux">
-                <img src="src/img/pollux.png"/>
+            
             </div>
             <div class="item_obtenu" id="canne">
                 <img src="src/img/canne_rudimentaire.png"/>
@@ -63,7 +61,7 @@
         
         
             <div id="djason">
-                <img src="src/img/djason.png"/>
+                
             </div>
             <div class="item_obtenu" id="filet">
                 <img src="src/img/filet_rudimentaire.png"/>
@@ -71,7 +69,7 @@
         
         
             <div id="daisy">
-                <img src="src/img/daisy_mae.png"/>
+                
             </div>
             <div class="item_obtenu" id="navet">
                 <img src="src/img/navet.png"/>
@@ -85,7 +83,7 @@
             <img src="src/img/canne_rudimentaire.png"/>
             </div>
             <div id="b_meli">
-
+            
             </div>
             <div id="b_melo">
 
