@@ -7,19 +7,21 @@ $(document).ready(function () {
 
     function afficheScore() {
         $('#bells').remove();
-        $('#score').append("<span id='bells'> Votre nombre de clochettes :<span id='nbrScore'>" + score + "</span></span>");
+        $('#score').append("<span id='bells'> Votre nombre de clochettes :" + score + "</br> Par seconde : " + bonus_passif + "</span>");
     }
+
     //fonction pour vérifier le score et changer l'apparence des personnages
     function checkScore() {
         allcharacters.forEach(element => {
-            if (element.compteur === 0) {
+            if (element.nb === 0) {
                 if (score >= element.cost / 2) {
                     id = element.id;
                     img = element.img;
                     $('#b_' + id).removeClass("hidden");
-                    element.compteur = 1;
+                    element.afficheInfo();
+                    element.nb = 1;
                 }
-            } else if (element.compteur != 0) {
+            } else if (element.nb != 0) {
                 id = element.id;
                 if (score >= element.cost) {
                     $('#b__' + id).removeClass("lock").addClass("unlock");
@@ -37,15 +39,19 @@ $(document).ready(function () {
                 if (score > element.cost) {
                     slug = element.id;
                     img = element.img;
+                    element.removeInfo();
+                    element.compteur = element.compteur + 1;
                     $('#' + slug).append("<img src=" + img + " >");
                     bonus_click = bonus_click + element.bonus;
                     score = score - element.cost;
                     afficheScore();
-                    updateCost();
-                    updateBonus();
+                    element.updateCost();
+                    element.updateBonus();
+                    element.afficheInfo();
                     console.log(element.bonus);
                     console.log(element.cost);
                     checkScore();
+
 
                 }
             })
@@ -55,20 +61,20 @@ $(document).ready(function () {
     function updateScore() {
         score = score + bonus_click;
         afficheScore();
+        checkScore();
 
     }
     //ajoute des points de manière passive
     function scorepassif() {
         score = score + bonus_passif;
         afficheScore();
+        checkScore();
     }
     $('#bag').click(function () {
         updateScore();
-        console.log(bonus_click);
     })
-    //score passif = valeur du clic toutes les 5 secondes
+    //score passif = valeur du clic toutes les seconde
     setInterval(scorepassif, 1000);
-    setInterval(checkScore, 1000);
 
     click();
 

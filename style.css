@@ -63,6 +63,7 @@ main{
 
 #store{
     flex: 1 1 auto;
+    max-width: 40%;
 }
 #meli{
     grid-area: 1 / 1 / 2 / 2;
@@ -138,10 +139,31 @@ main{
     -webkit-filter: grayscale(1);
 }
 
-.unlock{
-    
+.hidden img{
+    visibility: hidden;
 }
+
+.hidden p{
+    visibility: hidden;
+}
+
 
 .unlock:hover{
     cursor: pointer;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    max-height: 100%;
+    overflow: inherit;
+    justify-content: space-between;
+}
+
+.info p {
+    font-size: 2.5em;
+}
+
+.info p:last-child{
+    opacity: 0.5;
 }

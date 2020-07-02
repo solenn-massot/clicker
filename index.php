@@ -80,23 +80,49 @@
                 <img src="src/img/canne_rudimentaire.png" />
                 <img src="src/img/canne_rudimentaire.png" />
             </div>
-            <div id="b_meli" class="hidden">
+            <div id="b_meli" class="hidden info">
                 <img id="b__meli" class="lock" src="src/img/méli.png" />
+
+                <p id="name_meli"></p>
+                <p id="cost_meli"></p>
+                <p id="bonus_meli"></p>
+                <p id="compteur_meli"></p>
+
             </div>
-            <div id="b_melo" class="hidden">
-            <img id="b__melo" class="lock" src="src/img/mélo.png" />
+            <div id="b_melo" class="hidden info">
+                <img id="b__melo" class="lock" src="src/img/mélo.png" />
+                <p id="name_melo"></p>
+                <p id="cost_melo"></p>
+                <p id="bonus_melo"></p>
+                <p id="compteur_melo"></p>
             </div>
-            <div id="b_thibou" class="hidden">
-            <img id="b__thibou" class="lock" src="src/img/thibou.png" />
+            <div id="b_thibou" class="hidden info">
+                <img id="b__thibou" class="lock" src="src/img/thibou.png" />
+                <p id="name_thibou"></p>
+                <p id="cost_thibou"></p>
+                <p id="bonus_thibou"></p>
+                <p id="compteur_thibou"></p>
             </div>
-            <div id="b_pollux" class="hidden">
-            <img id="b__pollux" class="lock" src="src/img/pollux.png" />
+            <div id="b_pollux" class="hidden info">
+                <img id="b__pollux" class="lock" src="src/img/pollux.png" />
+                <p id="name_pollux"></p>
+                <p id="cost_pollux"></p>
+                <p id="bonus_pollux"></p>
+                <p id="compteur_pollux"></p>
             </div>
-            <div id="b_djason" class="hidden">
-            <img id="b__djason" class="lock" src="src/img/djason.png" />
+            <div id="b_djason" class="hidden info">
+                <img id="b__djason" class="lock" src="src/img/djason.png" />
+                <p id="name_djason"></p>
+                <p id="cost_djason"></p>
+                <p id="bonus_djason"></p>
+                <p id="compteur_djason"></p>
             </div>
-            <div id="b_daisy" class="hidden">
-            <img id="b__daisy" class="lock" src="src/img/daisy_mae.png" />
+            <div id="b_daisy" class="hidden info">
+                <img id="b__daisy" class="lock" src="src/img/daisy_mae.png" />
+                <p id="name_daisy"></p>
+                <p id="cost_daisy"></p>
+                <p id="bonus_daisy"></p>
+                <p id="compteur_daisy"></p>
             </div>
         </section>
     </main>

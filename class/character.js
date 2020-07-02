@@ -1,11 +1,12 @@
 class Characters {
-    constructor(nom, id, desc, img, cost, bonus, compteur = 0) {
+    constructor(nom, id, desc, img, cost, bonus, nb = 0, compteur = 0, ) {
         this.nom = nom;
         this.id = id;
         this.desc = desc;
         this.img = img;
         this.cost = cost;
         this.bonus = bonus;
+        this.nb = nb;
         this.compteur = compteur;
     }
 
@@ -15,6 +16,28 @@ class Characters {
 
     updateBonus() {
         this.bonus = Math.floor(this.bonus * 1.02);
+    }
+
+    afficheInfo() {
+        if(this.nb === 0)
+        {
+            $('#name_' + this.id).append(this.nom);
+        }
+        $('#cost_' + this.id).append(this.cost);
+        $('#bonus_' + this.id).append("+" + this.bonus);
+        $('#compteur_' + this.id).append(this.compteur);
+    }
+
+    removeInfo() {
+        var cost = $('#cost_' + this.id);
+        cost.empty();
+        // console.log(cost);
+        var bonus = $('#bonus_' + this.id);
+        bonus.empty();
+        // console.log(bonus)
+        var compteur = $('#compteur_' + this.id);
+        compteur.empty();
+        // console.log(compteur)
     }
 }
 
