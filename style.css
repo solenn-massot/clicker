@@ -172,3 +172,11 @@ main{
 .piece{
     min-height:200%;
 }
+
+#bells{
+    font-size : 1.2em;
+}
+
+#score{
+    text-align: center;
+}

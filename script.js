@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     function afficheScore() {
         $('#bells').remove();
-        $('#score').append("<span id='bells'> Votre nombre de clochettes :" + score + "</br> Par seconde : " + bonus_passif + "</span>");
+        $('#score').append("<span id='bells'> Votre nombre de clochettes :" + score + "</br> Par clic : " + bonus_click + "</br> Par seconde : " + bonus_passif + "</br></span>");
     }
 
     function checkCharacter() {
