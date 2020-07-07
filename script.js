@@ -25,7 +25,7 @@ $(document).ready(function () {
                 if (score >= element.cost) {
                     $('#b__' + id).removeClass("lock").addClass("unlock");
                 }
-                if (score < element.cost) {
+                else if (score < element.cost) {
                     $('#b__' + id).removeClass("unlock").addClass("lock");
                 }
             }
