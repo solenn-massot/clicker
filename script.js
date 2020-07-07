@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var score = 295;
+    var score = 1;
     var bonus_passif = 1;
     var bonus_click = 2;
 
@@ -10,8 +10,7 @@ $(document).ready(function () {
         $('#score').append("<span id='bells'> Votre nombre de clochettes :" + score + "</br> Par seconde : " + bonus_passif + "</span>");
     }
 
-    //fonction pour vérifier le score et changer l'apparence des personnages
-    function checkScore() {
+    function checkCharacter() {
         allcharacters.forEach(element => {
             if (element.nb === 0) {
                 if (score >= element.cost / 2) {
@@ -32,7 +31,29 @@ $(document).ready(function () {
             }
         });
     }
-    //fonction quand on clique sur un personnage
+
+    function checkEquipement() {
+        // console.log(allequipement)
+        allequipement.forEach(equip => {
+            $('#' + equip.slug).ready(function () {
+                if (+score >= +equip.cost) {
+                    $('#' + equip.slug).removeClass("lock").addClass("unlock");
+                } else if (score < equip.cost) {
+                    $('#' + equip.slug).removeClass("unlock").addClass("lock");
+                }
+
+            })
+
+        })
+    }
+
+
+
+    function checkScore() {
+        checkEquipement();
+        checkCharacter();
+    }
+
     function click() {
         allcharacters.forEach(element => {
             $('#b__' + element.id).click(function () {
@@ -48,23 +69,59 @@ $(document).ready(function () {
                     element.updateCost();
                     element.updateBonus();
                     element.afficheInfo();
-                    console.log(element.bonus);
-                    console.log(element.cost);
                     checkScore();
+                    if ((element.compteur % 3) === 0) {
+                        allequipement.forEach(equip => {
+                            if (slug === equip.characters && equip.nb === 0) {
+                                equip.afficheEquip();
+
+                                $('#' + equip.slug).ready(function () {
+                                    $('#' + equip.slug).click(function () {
+                                        if (score > equip.cost) {
+                                            score = score - equip.cost;
+                                            bonus_passif = bonus_passif + equip.bonus;
+                                            equip.nb = 1;
+                                            $('#o_' + equip.slug).append("<img src=" + equip.img + ">");
+                                            $('#' + equip.slug).remove();
+
+                                        }
+                                    })
+                                })
+                            } else if (slug === equip.characters && equip.nb != 0) {
+                                if (equip.slug === "pelle" || equip.slug === "canne" || equip.slug === "filet") {
+                                    equip.updateEquipement(equip.slug, equip.nb);
+                                    equip.afficheEquip();
+                                    $('#' + equip.slug).ready(function () {
+                                        $('#' + equip.slug).click(function () {
+                                            if (score > equip.cost) {
+                                                score = score - equip.cost;
+                                                bonus_passif = bonus_passif + equip.bonus;
+                                                equip.nb = equip.nb + 1;
+                                                $('#o_' + equip.slug).empty();
+                                                $('#o_' + equip.slug).append("<img src=" + equip.img + ">");
+                                                $('#' + equip.slug).remove();
+
+                                            }
+                                        })
+                                    })
+                                }
+                            }
+                        })
+                    }
 
 
                 }
             })
         });
     }
-    //update le score
+
     function updateScore() {
         score = score + bonus_click;
         afficheScore();
         checkScore();
 
     }
-    //ajoute des points de manière passive
+
     function scorepassif() {
         score = score + bonus_passif;
         afficheScore();
@@ -73,9 +130,10 @@ $(document).ready(function () {
     $('#bag').click(function () {
         updateScore();
     })
-    //score passif = valeur du clic toutes les seconde
+
     setInterval(scorepassif, 1000);
 
     click();
+
 
 })

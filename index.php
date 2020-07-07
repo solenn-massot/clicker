@@ -29,56 +29,53 @@
             <div id="meli">
 
             </div>
-            <div class="item_obtenu" id="craft">
-                <img src="src/img/craft.png" />
+            <div class="item_obtenu" id="o_craft">
+               
             </div>
 
 
             <div id="melo">
 
             </div>
-            <div class="item_obtenu" id="item">
-                <img src="src/img/objet.png" />
+            <div class="item_obtenu" id="o_objet">
+                
             </div>
 
 
             <div id="thibou">
 
             </div>
-            <div class="item_obtenu" id="pelle">
-                <img src="src/img/pelle_rudimentaire.png" />
+            <div class="item_obtenu" id="o_pelle">
+                
             </div>
 
 
             <div id="pollux">
 
             </div>
-            <div class="item_obtenu" id="canne">
-                <img src="src/img/canne_rudimentaire.png" />
+            <div class="item_obtenu" id="o_canne">
+                
             </div>
 
 
             <div id="djason">
 
             </div>
-            <div class="item_obtenu" id="filet">
-                <img src="src/img/filet_rudimentaire.png" />
+            <div class="item_obtenu" id="o_filet">
+                
             </div>
 
 
             <div id="daisy">
 
             </div>
-            <div class="item_obtenu" id="navet">
-                <img src="src/img/navet.png" />
+            <div class="item_obtenu" id="o_navet">
+                
             </div>
 
         </section>
         <section id="store">
             <div id="outils">
-                <img src="src/img/canne_rudimentaire.png" />
-                <img src="src/img/canne_rudimentaire.png" />
-                <img src="src/img/canne_rudimentaire.png" />
             </div>
             <div id="b_meli" class="hidden info">
                 <img id="b__meli" class="lock" src="src/img/méli.png" />
@@ -127,6 +124,7 @@
         </section>
     </main>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="class/equipement.js"></script>
     <script src="class/character.js"></script>
     <script src="script.js"></script>
 </body>

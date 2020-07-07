@@ -23,7 +23,7 @@ class Characters {
         {
             $('#name_' + this.id).append(this.nom);
         }
-        $('#cost_' + this.id).append(this.cost);
+        $('#cost_' + this.id).append(this.cost + "<img class='piece' src='src/img/bell.png'/>");
         $('#bonus_' + this.id).append("+" + this.bonus);
         $('#compteur_' + this.id).append(this.compteur);
     }

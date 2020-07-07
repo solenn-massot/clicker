@@ -125,6 +125,7 @@ main{
     margin-right: auto;
     margin-left: auto;
     filter: drop-shadow(5px 5px 5px #222);
+    max-height: 100%;
 }
 #store img{
     max-height: 100%;
@@ -166,4 +167,8 @@ main{
 
 .info p:last-child{
     opacity: 0.5;
+}
+
+.piece{
+    min-height:200%;
 }
