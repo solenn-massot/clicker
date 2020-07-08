@@ -3,6 +3,21 @@ $(document).ready(function () {
     var bonus_passif = 1;
     var bonus_click = 2;
 
+    var oldscore = localStorage.getItem("score");
+    var oldpassif = localStorage.getItem("passif");
+    var oldclick = localStorage.getItem("click");
+    console.log(oldscore)
+
+    if(oldscore != undefined){
+        score = parseInt(localStorage.getItem("score"));
+    }
+    if(oldpassif != undefined){
+        bonus_passif = parseInt(localStorage.getItem("passif"));
+    }
+    if(oldclick != undefined){
+        bonus_click = parseInt(localStorage.getItem("passif"));
+    }
+    
     $('#score').append("<span id='bells'> Votre nombre de clochettes :" + score + "</span>");
 
     function afficheScore() {
@@ -119,13 +134,15 @@ $(document).ready(function () {
         score = score + bonus_click;
         afficheScore();
         checkScore();
-
     }
 
     function scorepassif() {
         score = score + bonus_passif;
         afficheScore();
         checkScore();
+        localStorage.setItem('score',score);
+        localStorage.setItem('passif',bonus_passif);
+        localStorage.setItem('click',bonus_click);
     }
     $('#bag').click(function () {
         updateScore();
