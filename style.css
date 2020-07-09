@@ -131,9 +131,7 @@ main{
     max-height: 100%;
 }
 
-#meli1, #meli2, #meli3, #meli4, #meli5, #meli6, #meli7, #meli8, #meli9, #meli10, #meli11, #meli12{
-    visibility: hidden;
-}
+
 
 .lock{
     filter: grayscale(1);

@@ -22,27 +22,30 @@ class Equipements {
             this.img = "src/img/pelle_dore.png";
             this.bonus = this.bonus * 3;
             this.cost = this.cost * 5;
-        }
-        else if(slug === "canne" && nb === 1){
+        } else if (slug === "canne" && nb === 1) {
             this.img = "src/img/canne_normal.png";
             this.bonus = this.bonus * 2;
             this.cost = this.cost * 5;
-        }
-        else if(slug === "canne" && nb === 2){
+        } else if (slug === "canne" && nb === 2) {
             this.img = "src/img/canne_dore.png";
             this.bonus = this.bonus * 3;
             this.cost = this.cost * 7;
-        }
-        else if(slug === "filet" && nb === 1){
+        } else if (slug === "filet" && nb === 1) {
             this.img = "src/img/filet_normal.png";
             this.bonus = this.bonus * 2;
             this.cost = this.cost * 4;
-        }
-        else if(slug === "filet" && nb === 2){
+        } else if (slug === "filet" && nb === 2) {
             this.img = "src/img/filet_dore.png";
             this.bonus = this.bonus * 3;
             this.cost = this.cost * 8;
         }
+    }
+
+    buy() {
+        this.nb = this.nb + 1;
+        $('#o_' + this.slug).empty();
+        $('#o_' + this.slug).append("<img src=" + this.img + ">");
+        $('#' + this.slug).remove();
     }
 
 }
