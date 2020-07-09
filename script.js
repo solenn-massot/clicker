@@ -1,7 +1,10 @@
 $(document).ready(function () {
     var score = 1;
     var bonus_passif = 1;
-    var bonus_click = 2;
+    var bonus_click = 200;
+    var item = JSON.stringify(allcharacters);
+    console.log(item);
+    var mychara = [];
 
     var oldscore = localStorage.getItem("score");
     var oldpassif = localStorage.getItem("passif");
@@ -62,6 +65,50 @@ $(document).ready(function () {
         })
     }
 
+    function updateBonuspassif(bonus){
+        bonus_passif = bonus_passif + bonus;
+    }
+
+    function updateBonusclick(bonus){
+        bonus_click = bonus_click + bonus;
+    }
+
+    function pay(cost){
+        score = score - cost;
+    }
+
+    function isavailable(){
+        allequipement.forEach(equip => {
+            if (slug === equip.characters && equip.nb === 0) {
+                equip.afficheEquip();
+                $('#' + equip.slug).ready(function () {
+                    $('#' + equip.slug).click(function () {
+                        if (score > equip.cost) {
+                            pay(equip.cost);
+                            updateBonuspassif(equip.bonus);
+                            equip.buy();
+
+                        }
+                    })
+                })
+            } else if (slug === equip.characters && equip.nb != 0) {
+                if (equip.slug === "pelle" || equip.slug === "canne" || equip.slug === "filet") {
+                    equip.updateEquipement(equip.slug, equip.nb);
+                    equip.afficheEquip();
+                    $('#' + equip.slug).ready(function () {
+                        $('#' + equip.slug).click(function () {
+                            if (score > equip.cost) {
+                                pay(equip.cost);
+                                updateBonuspassif(equip.bonus);
+                                equip.buy();
+                            }
+                        })
+                    })
+                }
+            }
+        })
+    }
+
 
 
     function checkScore() {
@@ -78,50 +125,17 @@ $(document).ready(function () {
                     element.removeInfo();
                     element.compteur = element.compteur + 1;
                     $('#' + slug).append("<img src=" + img + " >");
-                    bonus_click = bonus_click + element.bonus;
-                    score = score - element.cost;
+                    updateBonusclick(element.bonus)
+                    pay(element.cost);
                     afficheScore();
                     element.updateCost();
                     element.updateBonus();
                     element.afficheInfo();
                     checkScore();
+                    mychara = + element;
+                    console.log(mychara);
                     if ((element.compteur % 3) === 0) {
-                        allequipement.forEach(equip => {
-                            if (slug === equip.characters && equip.nb === 0) {
-                                equip.afficheEquip();
-
-                                $('#' + equip.slug).ready(function () {
-                                    $('#' + equip.slug).click(function () {
-                                        if (score > equip.cost) {
-                                            score = score - equip.cost;
-                                            bonus_passif = bonus_passif + equip.bonus;
-                                            equip.nb = 1;
-                                            $('#o_' + equip.slug).append("<img src=" + equip.img + ">");
-                                            $('#' + equip.slug).remove();
-
-                                        }
-                                    })
-                                })
-                            } else if (slug === equip.characters && equip.nb != 0) {
-                                if (equip.slug === "pelle" || equip.slug === "canne" || equip.slug === "filet") {
-                                    equip.updateEquipement(equip.slug, equip.nb);
-                                    equip.afficheEquip();
-                                    $('#' + equip.slug).ready(function () {
-                                        $('#' + equip.slug).click(function () {
-                                            if (score > equip.cost) {
-                                                score = score - equip.cost;
-                                                bonus_passif = bonus_passif + equip.bonus;
-                                                equip.nb = equip.nb + 1;
-                                                $('#o_' + equip.slug).empty();
-                                                $('#o_' + equip.slug).append("<img src=" + equip.img + ">");
-                                                $('#' + equip.slug).remove();
-
-                                            }
-                                        })
-                                    })
-                                }
-                            }
-                        })
+                        isavailable();
                     }
 
 
