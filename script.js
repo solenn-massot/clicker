@@ -137,7 +137,7 @@ $(document).ready(function () {
                         "compteur": element.compteur,
                     }
                     localStorage.setItem(slug,JSON.stringify(add));
-                    if ((element.compteur === 3) === 0) {
+                    if ((element.compteur % 3) === 0) {
                         isavailable();
                     }
                 }
