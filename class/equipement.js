@@ -10,7 +10,6 @@ class Equipements {
             var parsing = JSON.parse(localStorage.getItem(""+this.slug+""))
             if(this.nb != parseInt(parsing['nombre'])){
                 this.nb = parseInt(parsing["nombre"]);
-                console.log(this.nb)
                 $('#o_' + this.slug).empty();
                 $('#o_' + this.slug).append("<img src=" + this.img + ">");
                 $('#' + this.slug).remove();

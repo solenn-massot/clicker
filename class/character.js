@@ -43,13 +43,10 @@ class Characters {
     removeInfo() {
         var cost = $('#cost_' + this.id);
         cost.empty();
-        // console.log(cost);
         var bonus = $('#bonus_' + this.id);
         bonus.empty();
-        // console.log(bonus)
         var compteur = $('#compteur_' + this.id);
         compteur.empty();
-        // console.log(compteur)
     }
 }
 

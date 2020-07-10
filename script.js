@@ -3,13 +3,11 @@ $(document).ready(function () {
     var bonus_passif = 1;
     var bonus_click = 200;
     var item = JSON.stringify(allcharacters);
-    //console.log(item);
     var mychara = [];
 
     var oldscore = localStorage.getItem("score");
     var oldpassif = localStorage.getItem("passif");
     var oldclick = localStorage.getItem("click");
-    //console.log(oldscore)
 
     if(oldscore != undefined){
         score = parseInt(localStorage.getItem("score"));
@@ -51,7 +49,6 @@ $(document).ready(function () {
     }
 
     function checkEquipement() {
-        // console.log(allequipement)
         allequipement.forEach(equip => {
             $('#' + equip.slug).ready(function () {
                 if (+score >= +equip.cost) {
