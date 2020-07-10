@@ -8,6 +8,18 @@ class Characters {
         this.bonus = bonus;
         this.nb = nb;
         this.compteur = compteur;
+        if(localStorage.getItem(this.id) != undefined){
+            var parsing = JSON.parse(localStorage.getItem(this.id))
+            this.cost =  parseInt(parsing["cost"]);
+            this.bonus =  parseInt(parsing["bonus"]);
+            this.compteur =  parseInt(parsing["compteur"]);
+            for(var i = 1; i <= this.compteur;i++){
+                $('#' + id).append("<img src=" + img + " >");
+                if(i === 3){
+                    break;
+                }
+            }
+        }
     }
 
     updateCost() {

@@ -3,13 +3,13 @@ $(document).ready(function () {
     var bonus_passif = 1;
     var bonus_click = 200;
     var item = JSON.stringify(allcharacters);
-    console.log(item);
+    //console.log(item);
     var mychara = [];
 
     var oldscore = localStorage.getItem("score");
     var oldpassif = localStorage.getItem("passif");
     var oldclick = localStorage.getItem("click");
-    console.log(oldscore)
+    //console.log(oldscore)
 
     if(oldscore != undefined){
         score = parseInt(localStorage.getItem("score"));
@@ -87,7 +87,6 @@ $(document).ready(function () {
                             pay(equip.cost);
                             updateBonuspassif(equip.bonus);
                             equip.buy();
-
                         }
                     })
                 })
@@ -117,6 +116,7 @@ $(document).ready(function () {
     }
 
     function click() {
+        console.log(allcharacters)
         allcharacters.forEach(element => {
             $('#b__' + element.id).click(function () {
                 if (score > element.cost) {
@@ -133,12 +133,16 @@ $(document).ready(function () {
                     element.afficheInfo();
                     checkScore();
                     mychara = + element;
-                    console.log(mychara);
-                    if ((element.compteur % 3) === 0) {
+                    var add = {
+                        "id": slug,
+                        "bonus": element.bonus,
+                        "cost": element.cost,
+                        "compteur": element.compteur,
+                    }
+                    localStorage.setItem(slug,JSON.stringify(add));
+                    if ((element.compteur === 3) === 0) {
                         isavailable();
                     }
-
-
                 }
             })
         });

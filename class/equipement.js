@@ -6,6 +6,17 @@ class Equipements {
         this.bonus = bonus;
         this.nb = nb;
         this.characters = characters;
+        if(localStorage.getItem(""+this.slug+"") != undefined){
+            var parsing = JSON.parse(localStorage.getItem(""+this.slug+""))
+            if(this.nb != parseInt(parsing['nombre'])){
+                this.nb = parseInt(parsing["nombre"]);
+                console.log(this.nb)
+                $('#o_' + this.slug).empty();
+                $('#o_' + this.slug).append("<img src=" + this.img + ">");
+                $('#' + this.slug).remove();
+            }
+        }
+        
     }
 
 
@@ -42,12 +53,18 @@ class Equipements {
     }
 
     buy() {
-        this.nb = this.nb + 1;
-        $('#o_' + this.slug).empty();
-        $('#o_' + this.slug).append("<img src=" + this.img + ">");
-        $('#' + this.slug).remove();
+        if(this.nb === 0){
+            this.nb = this.nb + 1;
+            $('#o_' + this.slug).empty();
+            $('#o_' + this.slug).append("<img src=" + this.img + ">");
+            $('#' + this.slug).remove();
+            var item = {
+                'nombre': this.nb,
+                'character': this.characters
+            }
+            localStorage.setItem(''+this.slug+'',JSON.stringify(item));
+        }
     }
-
 }
 
 
